@@ -1,0 +1,7 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+use utf8;
+
+
+# cursor: 6 del
