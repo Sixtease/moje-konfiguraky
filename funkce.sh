@@ -82,6 +82,13 @@ check() {
     perl -M$1 -le '($p="'"$1"'")=~s{::}{/}g; print $'"$1"'::VERSION, " ", $INC{"$p.pm"}'
 }
 
+natrunk() { (
+    set -x
+    git checkout -b 'trunk' remotes/svn/trunk # switchnout do trunku
+    git branch -D master # smazat master
+    git branch -M trunk master # přejmenovat trunk na master
+) }
+
 #export LC_ALL=cs_CZ.UTF-8
 export PATH=${PATH}${PATH:+:}.
 export LESSCHARSET="utf-8"
